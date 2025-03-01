@@ -55,50 +55,60 @@ h6 {
     font-size: 15px;
 }
 
+form {
+    margin-top: 20px;
+}
+
 label {
-    display: block;
-    width: 100%;
-    margin-bottom: 5px;
-}
-input[type=text], input[type=email] {
-    font-family: Quando;
-    padding: 10px;
-    display: block;
-    width: calc( 100% - 24px );
-    margin-bottom: 15px;
-}
-form .flexbox {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    gap: 4px;
+    margin-bottom: 5px;
+    font-family: Quando, sans-serif;
+    color: #787878;
 }
-form span {
-    display: block;
+
+.required-indicator {
+    color: red;
+    background: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    font-family: Quando, sans-serif;
+    padding: 12px;
+    width: calc(100% - 24px);
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
     height: 25px;
     width: 25px;
-    background-color: #eee;
-    margin-bottom: 15px;
-    margin-right: 10px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
     position: relative;
+    background-color: #fff;
+    cursor: pointer;
 }
-/* hover */
-form .flexbox:hover span {
+
+input[type="checkbox"]:hover {
     background-color: #ccc;
+    border-color: #ccc;
 }
-/* checked */
-form .flexbox span.checked {
+
+input[type="checkbox"]:checked {
     background-color: #2196F3;
+    border-color: #2196F3;
 }
-form .flexbox span:after {
+
+input[type="checkbox"]:checked:after {
     content: "";
-    position: absolute;
-    display: none;
-}
-form .flexbox span.checked:after {
-    display: block;
-}
-.container span.checked:after {
-    left: 9px;
-    top: 5px;
+    left: 7.5px;
+    top: 3px;
     width: 5px;
     height: 10px;
     border: solid white;
@@ -106,16 +116,20 @@ form .flexbox span.checked:after {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+    position: absolute;
 }
-label.check {
-    display: block;
-    width: auto;
+
+form .flexbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 15px;
 }
-input[type=submit] {
-    font-family: Quando;
+
+input[type="submit"] {
+    font-family: Quando, sans-serif;
     text-transform: uppercase;
-    width: calc( 100% - 2px );
+    width: calc(100% - 2px);
     background-color: #B7D2FF;
     border: none;
     color: white;
@@ -125,16 +139,14 @@ input[type=submit] {
     cursor: pointer;
     transition: all 0.5s;
 }
-input[type=submit]:hover {
+
+input[type="submit"]:hover {
     background-color: #84B2FF;
 }
-
-
 .container {
     width: 94%;
     margin: 0 auto;
 }
-
 
 /* header and main nav */
 header {

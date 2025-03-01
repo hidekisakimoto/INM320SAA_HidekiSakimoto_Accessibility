@@ -60,18 +60,24 @@
                     <div class="post-list-entry">
                         <p>Contact us to learn more!</p>
                         <form action="/" method="post">
-                            <label for="NameField">Name</label>
-                            <input id="NameField" type="text" name="fullname" required />
+                            <label for="NameField">Name <span class="required-indicator" aria-hidden="true">*</span></label>
+                            <input id="NameField" type="text" name="fullname" required aria-required="true" />
                             
-                            <label for="EmailField">Email</label>
-                            <input id="EmailField" type="email" name="email" required />
+                            <label for="EmailField">Email <span class="required-indicator" aria-hidden="true">*</span></label>
+                            <input id="EmailField" type="email" name="email" required aria-required="true" />
 
+                            <label for="SubjectField">Subject <span class="required-indicator" aria-hidden="true">*</span></label>
+                            <input id="SubjectField" type="text" name="subject" required aria-required="true" />
+
+                            <label for="PhoneField">Phone Number <span class="required-indicator" aria-hidden="true">*</span></label>
+                            <input id="PhoneField" type="tel" name="phone" required aria-required="true" pattern="[0-9]{10,12}" placeholder="(123) 456-7890" />
+                        
                             <div class="flexbox">
-                                <span></span>
-                                <label class="check">Check Me (required)</label>
+                                <input type="checkbox" id="checkMe" name="checkMe" required aria-required="true" />
+                                <label for="checkMe">I agree to the terms and conditions<span class="required-indicator" aria-hidden="true">*</span></label>
                             </div>
-
-                            <input type="submit" value="Submit" />
+                        
+                            <input type="submit" value="Submit" aria-label="Submit contact form" />
                         </form>
                     </div>
                 </div>
